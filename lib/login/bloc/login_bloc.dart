@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter_workout_app/login/bloc/bloc.dart';
@@ -64,7 +65,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Stream<LoginState> _mapLoginWithGooglePressedToState() async* {
     try {
-      await _userRepository.signInWithGoogle();
+      final currentUser = await _userRepository.signInWithGoogle();
+
+      Firestore.instance.collection('users').document(currentUser.uid).setData({
+        "email": currentUser.email
+      });
       yield LoginState.success();
     } catch (_) {
       yield LoginState.failure();

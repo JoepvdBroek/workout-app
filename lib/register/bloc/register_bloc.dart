@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter_workout_app/user_repository.dart';
@@ -68,8 +69,14 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         email: email,
         password: password,
       );
+
+      final currentUser = await _userRepository.getUser();
+      Firestore.instance.collection('users').document(currentUser.uid).setData({
+        "email": currentUser.email
+      });
       yield RegisterState.success();
     } catch (_) {
+      print(_);
       yield RegisterState.failure();
     }
   }
