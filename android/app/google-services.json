@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "894035096339",
+    "firebase_url": "https://workout-app-a15cf.firebaseio.com",
+    "project_id": "workout-app-a15cf",
+    "storage_bucket": "workout-app-a15cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894035096339:android:667bdb4360f45fafee60e6",
+        "android_client_info": {
+          "package_name": "workout.flutter_workout_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894035096339-hai53u09nlce5rkk24fv24emuaqgnh5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhzoDoKuAhH9gA8Z8DNe1L8kIphv3LYhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894035096339-hai53u09nlce5rkk24fv24emuaqgnh5n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
